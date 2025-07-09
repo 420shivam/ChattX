@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChattX - Real-Time Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🌗 Light/Dark Mode Toggle -->
+  <button class="themeToggle" aria-label="Toggle Light/Dark Mode">🌙</button>
+
+  <ul class="pages">
+    <!-- 🔐 Login Page -->
+    <li class="login page" role="region" aria-label="Login Page">
+      <div class="form">
+        <h1 class="title">Welcome to ChattX</h1>
+        <h3 class="subtitle">Enter your nickname to start chatting</h3>
+        <input
+          class="usernameInput"
+          type="text"
+          maxlength="14"
+          placeholder="Enter your nickname..."
+          aria-label="Enter your nickname"
+          autocomplete="off"
+        />
+        <button class="nextButton" aria-label="Proceed to chat">Next</button>
+      </div>
+    </li>
+
+    <!-- 💬 Chat Page -->
+    <li class="chat page hidden" role="region" aria-label="Chat Page">
+      <!-- 🧭 Top Buttons -->
+      <button class="leaveButton" aria-label="Leave Chat">Leave</button>
+      <button class="addMemberButton" aria-label="Add Member">➕</button>
+
+      <!-- 👥 Add Member Modal -->
+      <div class="memberModal hidden" id="memberModal" role="dialog" aria-modal="true" aria-label="Add Member Options">
+        <div class="modalContent">
+          <h3>Select a method to invite a member:</h3>
+          <ul>
+            <li><button class="inviteOption" data-type="phone">📱 Invite by Phone</button></li>
+            <li><button class="inviteOption" data-type="contacts">📇 Invite from Contacts</button></li>
+            <li><button class="inviteOption" data-type="instagram">📸 Invite from Instagram</button></li>
+            <li><button class="inviteOption" data-type="social">🌐 Invite from Facebook/Snapchat</button></li>
+          </ul>
+          <button class="closeModal" aria-label="Close Add Member Modal">Close</button>
+        </div>
+      </div>
+
+      <!-- 📜 Messages Area -->
+      <div class="chatArea">
+        <ul class="messages" aria-live="polite" aria-relevant="additions text"></ul>
+      </div>
+
+      <!-- 📝 Input Area -->
+      <div class="inputContainer">
+        <input
+          class="inputMessage"
+          type="text"
+          placeholder="Type your message..."
+          aria-label="Type your message here"
+          autocomplete="off"
+        />
+
+        <!-- 📎 Upload -->
+        <label for="fileInput" class="uploadLabel" aria-label="Upload image or video">📎</label>
+        <input
+          type="file"
+          id="fileInput"
+          class="fileInput"
+          accept="image/*,video/*"
+          hidden
+        />
+
+        <!-- 📨 Send -->
+        <button class="okButton" aria-label="Send message">📨</button>
+
+        <!-- 🎙 Mic -->
+        <button class="micButton" aria-label="Voice input">🎙</button>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Scripts -->
+  <noscript>You need JavaScript enabled to use this chat app.</noscript>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

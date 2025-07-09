@@ -1,0 +1,16 @@
+{
+  "name": "chatx-client",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "express-fileupload": "^1.5.2",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.19"
+  }
+}
